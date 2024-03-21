@@ -16,10 +16,11 @@ export abstract class InMemoryRepository<E extends Entity>
     if (!entity) {
       throw new Error('Entity not found')
     }
+    return entity
   }
 
   async findAll(): Promise<E[]> {
-    throw new Error('Method not implemented.')
+    return this.itens
   }
 
   async update(entity: E): Promise<void> {
