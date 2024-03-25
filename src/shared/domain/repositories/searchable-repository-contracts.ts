@@ -11,13 +11,14 @@ export type SearchProps<Filter = string> = {
   filter?: Filter | null
 }
 
-export class SeachParams {
+export class SearchParams {
   protected _page: number
   protected _perPage = 15
   protected _sort: string | null
   protected _sortDir: SortDirection | null
   protected _filter: string | null
-  constructor(props: SearchProps) {
+
+  constructor(props: SearchProps = {}) {
     this.page = props.page
     this.perPage = props.perPage
     this.sort = props.sort
@@ -42,7 +43,7 @@ export class SeachParams {
   }
 
   private set perPage(value: number) {
-    let _perPage = +value
+    let _perPage = value === (true as any) ? this._perPage : +value
     if (
       Number.isNaN(_perPage) ||
       _perPage <= 0 ||
@@ -90,5 +91,5 @@ export interface SearchableRepositoryInterface<
   SearchInput,
   SearchOutput,
 > extends RepositoryInterface<E> {
-  search(searchInput: SeachParams): Promise<SearchOutput>
+  search(searchInput: SearchParams): Promise<SearchOutput>
 }
