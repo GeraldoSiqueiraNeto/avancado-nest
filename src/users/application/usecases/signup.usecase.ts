@@ -2,6 +2,7 @@ import { HashProvider } from '../../../shared/application/providers/hash-provide
 import { UserEntity } from '../../domain/entities/user.entity'
 import { UserRepository } from '../../domain/repositories/user.repository'
 import { BadRequestError } from '../errors/bad-request-error'
+import { UseCase as DefaultUseCase } from '../../../shared/application/usecases/use-case'
 
 export namespace SignupUseCase {
   export type Input = {
@@ -18,7 +19,7 @@ export namespace SignupUseCase {
     createdAt: Date
   }
 
-  export class UseCase {
+  export class UseCase implements DefaultUseCase<Input, Output> {
     constructor(
       private userRepository: UserRepository.Repository,
       private hashProvider: HashProvider,
