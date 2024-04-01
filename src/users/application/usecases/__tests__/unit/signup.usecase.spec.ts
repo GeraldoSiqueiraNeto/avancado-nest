@@ -4,7 +4,7 @@ import { UserInMemoryRepository } from '../../../../infrastructure/database/in-m
 import { BcryptjsHashProvider } from '../../../../infrastructure/providres/hash-provider/bcryptjs-hash.provider'
 import { UserDataBuilder } from '../../../../domain/testing/helpers/user-data-builder'
 import { ConflictError } from '../../../../../shared/domain/errors/conflict-error'
-import { BadRequestError } from '../../../errors/bad-request-error'
+import { BadRequestError } from '../../../../../shared/application/errors/bad-request-error'
 
 describe('SignupUseCase unit tests', () => {
   let sut: SignupUseCase.UseCase
