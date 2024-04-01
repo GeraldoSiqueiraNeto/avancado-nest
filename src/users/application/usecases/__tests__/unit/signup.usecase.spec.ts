@@ -1,10 +1,10 @@
-import { SignupUseCase } from '../signup.usecase'
-import { HashProvider } from '../../../../shared/application/providers/hash-provider'
-import { UserInMemoryRepository } from '../../../infrastructure/database/in-memory/repositories/user-in-memory.repository'
-import { BcryptjsHashProvider } from '../../../infrastructure/providres/hash-provider/bcryptjs-hash.provider'
-import { UserDataBuilder } from '../../../domain/testing/helpers/user-data-builder'
-import { ConflictError } from '../../../../shared/domain/errors/conflict-error'
-import { BadRequestError } from '../../errors/bad-request-error'
+import { SignupUseCase } from '../../signup.usecase'
+import { HashProvider } from '../../../../../shared/application/providers/hash-provider'
+import { UserInMemoryRepository } from '../../../../infrastructure/database/in-memory/repositories/user-in-memory.repository'
+import { BcryptjsHashProvider } from '../../../../infrastructure/providres/hash-provider/bcryptjs-hash.provider'
+import { UserDataBuilder } from '../../../../domain/testing/helpers/user-data-builder'
+import { ConflictError } from '../../../../../shared/domain/errors/conflict-error'
+import { BadRequestError } from '../../../errors/bad-request-error'
 
 describe('SignupUseCase unit tests', () => {
   let sut: SignupUseCase.UseCase
