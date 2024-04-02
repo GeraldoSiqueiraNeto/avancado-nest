@@ -3,6 +3,7 @@ import { UserEntity } from '../../domain/entities/user.entity'
 import { UserRepository } from '../../domain/repositories/user.repository'
 import { BadRequestError } from '../../../shared/application/errors/bad-request-error'
 import { UseCase as DefaultUseCase } from '../../../shared/application/usecases/use-case'
+import { UserOutputMapper } from '../dto/user-output'
 
 export namespace SignupUseCase {
   export type Input = {
@@ -38,7 +39,7 @@ export namespace SignupUseCase {
         Object.assign(input, { password: hashPassword }),
       )
       await this.userRepository.insert(entity)
-      return entity.toJson()
+      return UserOutputMapper.toOutput(entity)
     }
   }
 }

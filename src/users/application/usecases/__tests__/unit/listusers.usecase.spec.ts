@@ -2,7 +2,7 @@ import { UserEntity } from '../../../../domain/entities/user.entity'
 import { UserRepository } from '../../../../domain/repositories/user.repository'
 import { UserDataBuilder } from '../../../../domain/testing/helpers/user-data-builder'
 import { UserInMemoryRepository } from '../../../../infrastructure/database/in-memory/repositories/user-in-memory.repository'
-import { ListUsersUseCase } from '../../listusersusecase'
+import { ListUsersUseCase } from '../../list-users.usecase'
 
 describe('listUsersUseCase unit tests', () => {
   let sut: ListUsersUseCase.UseCase
