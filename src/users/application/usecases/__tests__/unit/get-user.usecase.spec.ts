@@ -24,7 +24,7 @@ describe('GetUserUseCase unit tests', () => {
     const items = [new UserEntity(UserDataBuilder({}))]
     repository.items = items
 
-    const result = await sut.execute({ id: items[0].id })
+    const result = await sut.execute({ id: items[0]._id })
     expect(spyFindById).toHaveBeenCalledTimes(1)
     expect(result).toMatchObject({
       id: items[0].id,
