@@ -4,7 +4,7 @@ import { UseCase as DefaultUseCase } from '../../../shared/application/usecases/
 import { InvalidPasswordError } from '../../../shared/application/errors/invalid-password-error'
 import { HashProvider } from '../../../shared/application/providers/hash-provider'
 
-export namespace UpdatePasswordUserUseCase {
+export namespace UpdatePasswordUseCase {
   export type Input = {
     id: string
     password: string
