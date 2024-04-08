@@ -5,7 +5,7 @@ import { UseCase as DefaultUseCase } from '../../../shared/application/usecases/
 import { UserOutputMapper } from '../dto/user-output'
 import { InvalidCredentialsError } from '../../../shared/application/errors/invalid-credentials-error'
 
-export namespace SignupUseCase {
+export namespace SigninUseCase {
   export type Input = {
     email: string
     password: string
